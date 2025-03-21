@@ -38,7 +38,7 @@ function App() {
         <div className={styles.todoText}>
           <p>There is no tasks</p>
           <img
-            src='/public/page-concept.png'
+            src='/ToDoList/page-concept.png'
             alt='No tasks'
             className={styles.emptyImage}
           />
