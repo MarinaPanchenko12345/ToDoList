@@ -13,7 +13,7 @@ const AddNewTask: React.FC<AddTaskProps> = ({ onAdd }) => {
   const AddTask = useCallback(() => {
     onAdd(inputValue);
     setInputValue("");
-  }, [inputValue]);
+  }, [inputValue, onAdd]);
 
   return (
     <div className={styles.addTask}>

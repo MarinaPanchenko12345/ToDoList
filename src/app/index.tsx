@@ -4,6 +4,7 @@ import AddNewTask from "../components/add_task/AddNewTask";
 import ControlTask from "../components/control_task/ControlTask";
 import { useState } from "react";
 import { Pagination, Stack } from "@mui/material";
+import { motion } from "framer-motion";
 
 function App() {
   const tasks = useToDoStore((state) => state.tasks);
@@ -45,18 +46,25 @@ function App() {
         </div>
       )}
       <div className={styles.taskList}>
-        {currentTasks.map((task) => (
-          <ControlTask
+        {currentTasks.map((task, index) => (
+          <motion.div
             key={task.id}
-            id={task.id}
-            title={task.title}
-            isCompleted={task.isCompleted}
-            onDone={completedTask}
-            onEdit={updateTask}
-            onRemove={removeTask}
-          />
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.15, duration: 0.5 }}
+          >
+            <ControlTask
+              id={task.id}
+              title={task.title}
+              isCompleted={task.isCompleted}
+              onDone={completedTask}
+              onEdit={updateTask}
+              onRemove={removeTask}
+            />
+          </motion.div>
         ))}
       </div>
+      ;
       {tasks.length > 0 && (
         <Stack spacing={2} className={styles.todoPagination}>
           <Pagination
