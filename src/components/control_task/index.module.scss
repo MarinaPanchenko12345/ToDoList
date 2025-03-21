@@ -1,0 +1,119 @@
+.controlTask {
+  display: grid;
+  grid-template-columns: 1fr 40px 40px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  border: 1px solid #ebe9e9;
+  background: #95019213;
+  color: white;
+  &Label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    height: 50px;
+    padding: 0px 0px 0px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &Checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.3);
+    accent-color: #cb09f6fe;
+    &:hover {
+      transform: scale(1.7);
+    }
+  }
+  &EditTitle {
+    outline: none;
+    border: none;
+    font: 1rem "Montserrat", sans-serif;
+    background: none;
+    box-shadow: 0 4px 0 -3px #ebe9e9;
+    color: white;
+  }
+  &Edit,
+  &Remove,
+  &Save {
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.5);
+    &:hover {
+      transform: scale(1.9);
+    }
+  }
+}
+@media (max-width: 1050px) {
+  .controlTask {
+    grid-template-columns: 1fr 35px 35px;
+    gap: 10px;
+    &EditTitle {
+      font-size: 0.85rem;
+    }
+    &Label {
+      height: 40px;
+      font-size: 0.85rem;
+    }
+    &Checkbox {
+      width: 16px;
+      height: 16px;
+      transform: scale(1.1);
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+    &Edit,
+    &Remove,
+    &Save {
+      transform: scale(1.2);
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .controlTask {
+    grid-template-columns: 1fr 30px 30px;
+    gap: 5px;
+    &EditTitle {
+      font-size: 0.7rem;
+    }
+    &Label {
+      padding: 0px 0px 0px 5px;
+      height: 30px;
+      font-size: 0.7rem;
+    }
+    &Checkbox {
+      width: 16px;
+      height: 16px;
+      margin-bottom: 8px;
+      margin-right: 5px;
+      transform: scale(1);
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+    &Edit,
+    &Remove,
+    &Save {
+      transform: scale(1.1);
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+  }
+}

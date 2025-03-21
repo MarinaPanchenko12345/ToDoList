@@ -1,0 +1,61 @@
+.addTask {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  gap: 20px;
+  margin-bottom: 45px;
+  &Value {
+    border: 1px solid #ebe9e9;
+    outline: none;
+    border-radius: 25px;
+    padding-left: 25px;
+    font: 1rem/1.4 "Montserrat", sans-serif;
+    background: #95019213;
+    color: #ebe9e9;
+    &::placeholder {
+      color: #ebe9e9;
+    }
+  }
+  &Button {
+    width: 50px;
+    height: 50px;
+    background: #95019213;
+    border: 1px solid #ebe9e9;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #ebe9e9;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      background: #994bfe91;
+      transform: scale(1.2);
+    }
+  }
+}
+@media (max-width: 1050px) {
+  .addTask {
+    grid-template-columns: 1fr 35px;
+    &Value {
+      font-size: 0.85rem;
+    }
+    &Button {
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .addTask {
+    grid-template-columns: 1fr 25px;
+    gap: 5px;
+    &Value {
+      font-size: 0.7rem;
+    }
+    &Button {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+    }
+  }
+}

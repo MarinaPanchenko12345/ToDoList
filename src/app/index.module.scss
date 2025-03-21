@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+HU:wght@100..400&display=swap");
+
+body {
+  font: 16px/1.4 "Montserrat", sans-serif;
+  background: url(/5524686.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.todo {
+  position: relative;
+  display: block;
+  width: 50vw;
+  height: 90vh;
+  margin-top: 30px;
+  padding: 10px 50px;
+  border: 1px solid rgb(236, 235, 235);
+  background: transparent;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  &Title {
+    font-family: "Pacifico", cursive;
+    font-size: 3rem;
+    color: rgb(236, 235, 235);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  &Text {
+    text-align: center;
+    font-weight: bolder;
+    & .emptyImage {
+      width: 400px;
+    }
+  }
+}
+.taskList {
+  max-height: 65%;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.taskList::-webkit-scrollbar {
+  width: 8px;
+}
+.taskList::-webkit-scrollbar-track {
+  background: rgba(149, 1, 146, 0.1);
+  border-radius: 10px;
+}
+.taskList::-webkit-scrollbar-thumb {
+  background: #cb09f6fe;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+.taskList::-webkit-scrollbar-thumb:hover {
+  background: #994bfe91;
+}
+.todoPagination {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 1200px) {
+  .todo {
+    width: 60vw;
+  }
+}
+@media (max-width: 900px) {
+  .todo {
+    width: 70vw;
+  }
+}
+@media (max-width: 700px) {
+  .todo {
+    width: 75vw;
+    padding: 10px 20px;
+  }
+  .emptyImage {
+    max-width: 350px;
+  }
+}
+@media (max-width: 600px) {
+  .todoTitle {
+    font-size: 2.5rem;
+  }
+  .emptyImage {
+    max-width: 300px;
+  }
+}
+@media (max-width: 400px) {
+  .emptyImage {
+    max-width: 250px;
+  }
+}
